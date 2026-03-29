@@ -75,13 +75,14 @@ public abstract class HandledScreenMixin {
     }
 
     @Inject(method = "drawSlot", at = @At("RETURN"))
-    private void onDrawSlot(DrawContext context, Slot slot, CallbackInfo ci) {
+    private void onDrawSlot(
+            DrawContext context, Slot slot, int mouseX, int mouseY, CallbackInfo ci) {
         ScreenCommandSlotManager.drawHighlightOnSlot(context, slot);
         ScreenCommandSlotManager.drawSlotId(context, slot);
     }
 
     @Inject(method = "drawSlot", at = @At("RETURN"))
-    private void drawSlot(DrawContext context, Slot slot, CallbackInfo ci) {
+    private void drawSlot(DrawContext context, Slot slot, int mouseX, int mouseY, CallbackInfo ci) {
         if (slot.id == slotManager.getHighlightedSlotID()
                 && slotManager.shouldRenderHighlightedSlot()) {
             slotManager.drawHighlightedOnSlot(context, slot);

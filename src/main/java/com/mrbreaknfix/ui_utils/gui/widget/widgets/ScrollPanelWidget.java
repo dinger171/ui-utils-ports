@@ -333,7 +333,7 @@ public class ScrollPanelWidget extends Widget implements Scrollable, Typeable, C
 
             if (target instanceof Noisy) {
                 mc.getSoundManager()
-                        .play(PositionedSoundInstance.master(SoundEvents.UI_BUTTON_CLICK, 1.0F));
+                        .play(PositionedSoundInstance.ui(SoundEvents.UI_BUTTON_CLICK, 1.0F));
             }
         } else {
             if (focusedContentWidget != null) {

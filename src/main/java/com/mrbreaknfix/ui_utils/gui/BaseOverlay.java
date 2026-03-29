@@ -302,9 +302,7 @@ public abstract class BaseOverlay {
                 targetWidget.onMouseClick(mouseX, mouseY, button);
                 if (targetWidget instanceof Noisy) {
                     mc.getSoundManager()
-                            .play(
-                                    PositionedSoundInstance.master(
-                                            SoundEvents.UI_BUTTON_CLICK, 1.0F));
+                            .play(PositionedSoundInstance.ui(SoundEvents.UI_BUTTON_CLICK, 1.0F));
                 }
                 return true; // Consume the event
             }
